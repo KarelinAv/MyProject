@@ -1,0 +1,67 @@
+
+
+function main(){
+	if(testLogin() && testPass1()&& testPass2()&& testPasses()){
+		return true;
+	}
+	return false;
+}
+
+function testLogin(){
+	var login = document.getElementById('login').value;
+	if(/^.{5,15}$/.test(login)){
+		return true;
+	}else{
+		alert("Логин не подходит");
+		return false;
+	}
+}
+
+function testPass1(){
+	var pass1 = document.getElementById('pass1').value;
+	if(/^(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(pass1)){
+		return true;
+	}else{
+		alert("password не подходит");
+		return false;
+	}
+}
+function testPass2(){
+	var pass2 = document.getElementById('pass2').value;
+	if(/^(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(pass2)){
+		return true;
+	}else{
+		alert("password не подходит");
+		return false;
+	}
+}
+function testPasses(){
+   var pass1 = document.getElementById('pass1').value;
+    var pass2 = document.getElementById('pass2').value;
+	if(pass1==pass2)
+    {
+		return true;
+	}else{
+		alert("Пароли не совпадают!");
+		return false;
+	}
+}
+function testGender(){
+	var gender = document.getElementsByName('gender');
+	for(var i = 0; i < gender.length; i++){
+		if(gender[i].checked){
+			return true;
+		}
+	}
+	alert("Выберите пол");
+	return false;
+}
+
+
+
+
+
+
+
+
+
